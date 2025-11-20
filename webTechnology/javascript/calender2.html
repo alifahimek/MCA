@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Enter year:
+    <input type="number" id="year" min="1" value="2025">
+    <button onclick="calender()">show cal</button>
+    <div class="cal"></div>
+    <script>
+        function calendar(){
+            var y=document.getElementById('year').value;
+            var months=["jan","feb","mar","apr","may","jun","jul","aug"]
+            var fullcalender="";
+            for(var m=0;m<8;m++){
+                var a="<h3>"+months[m]+y+"</h3>";
+                a+="<table border='2' ><tr>"+"<th>sun</th> <th>mon</th> <th>tue</th><th>WED</th> <th>thur</th> <th>fri</th><th>sat</th>"
+                var date
+
+            }
+        }
+    </script>
+</body>
+</html>

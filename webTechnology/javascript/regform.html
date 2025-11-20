@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: lightblue;
+      }
+      .form-table {
+        background-color: beige;
+        width: 50%;
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 8px;
+      }
+      .form-table th,
+      .form-table td {
+        border: 1px solid black;
+        padding: 8px;
+      }
+      .marquee {
+        background-color: lightblue;
+        color: brown;
+      }
+      .warning{
+        color: red;
+        margin-top: 0;
+        margin-bottom: 0;
+        font-size: 0.75em;
+
+      }
+
+    </style>
+  </head>
+  <body bgcolor="lightblue">
+    <marquee class="marquee" behavior="scroll" direction="right" onmouseover="this.stop();" 
+    onmouseout="this.start();"><b>Welcome to the freshers world</b></marquee>
+    <form name="regform" onsubmit="validate()">
+      <table class="form-table" border="1" style="border-collapse:collapse; padding:8px;">
+        <tr>
+          <th colspan="2">registration form</th>
+        </tr>
+        <tr>
+          <td><label for="name">Name:</label></td>
+          <td><input type="text" id="name" name="name"  /><p class="warning" id="nameveri" style="display: none;"> </p></td>
+        </tr>
+        <tr>
+            <td><label for="age">Select your age:</label> </p></td>
+            <td>
+              <input type="number" id="age"><p class="warning"  id="ageveri" style="display: none;"></p>
+<!-- <select name="age" id="age">
+  <option value="" disabled selected>Select age</option>
+  
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+  <option value="11">11</option>
+  <option value="12">12</option>
+  <option value="13">13</option>
+  <option value="14">14</option>
+  <option value="15">15</option>
+  <option value="16">16</option>
+  <option value="17">17</option>
+  <option value="18">18</option>
+  <option value="19">19</option>
+
+</select> -->
+</td>
+        </tr>
+        <tr>
+          <td><label for="email">Email:</label></td>
+          <td><input type="email" id="email" name="email" /><p class="warning" id="emailveri" style="display: none;"> </p></td>
+        </tr>
+        <tr>
+          <td><label for="password">Password:</label></td>
+          <td>
+            <input type="password" id="pass" name="password" />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="reenter-password">Re-enter Password:</label></td>
+          <td>
+            <input
+              type="password"
+              id="repass"
+              name="reenter-password"
+              
+            />
+            <p class="warning" id="passveri" style="display: none;"></p>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="security-question">Security Question:</label></td>
+          <td> <input type="radio" name="security-answer">
+            
+              What isyour favorite color?</input><br>
+              <input type="radio" name="security-answer">What is the name of your  pet?</input><br>
+              <input type="radio" name="security-answer">
+                who is your best friend?
+          </input>
+            
+            
+          </td>
+        </tr>
+        <tr>
+            <tr>
+          <td><label for="security-answer">Answer:</label></td>
+          <td>
+            <input
+              type="text"
+              id="security-answer"
+              name="security-answer"
+            
+            />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="language"> Language known :</label></td>
+          <td>
+            <input
+              type="checkbox"
+              id="english"
+              name="language"
+              value="english"
+            />
+            <label for="english">English</label><br />
+            <input
+                  type="checkbox"
+                  id="malayalam"
+                  name="language"
+                  value="malayalam"
+                />
+            <label for="malayalam">malayalam</label>
+                  
+            </label><br />
+            <input type="checkbox" id="french" name="language" value="french" />
+            <label for="french">French</label><br />
+          </td>
+        </tr>
+
+        
+          </td>
+        </tr>
+        <tr>
+            <td>Phone:</td>
+          <!-- <td rowspan="2"><label for="phone">Phone:</label></td>
+          <td>
+            <input type="tel" id="phone" name="phone" required /></td>
+          <td name="s"><input type="tel" id="phone" name="phone" required /></td> -->
+          <td>
+             <table>
+            <tr>
+                <th>Home</th>
+                <th>Office</th>
+            </tr>
+            <tr>
+                <td><input type="tel" id="phone-home">
+                  <p id="homeveri" style="display: none;"> </p>
+                </td>
+                <td><input type="tel" id="phone-office"><p id="homeveri" style="display: none;"> </p></td>
+            </tr>
+          </table>
+          </td>
+        </tr>
+
+        <tr>
+          <td><label for="cv">Upload CV:</label></td>
+          <td>
+            <input
+              type="file"
+              id="cv"
+              name="cv"
+              accept=".pdf,.doc,.docx"
+              
+            />
+          </td>
+        </tr>
+        <tr>
+          <td> <button type="reset">Reset</button></td>
+          <td>
+           
+            <button type="submit" onclick="valiAge();valipho()">Register</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+
+    <script>
+      // function req(){
+      //   let x=document.forms["regform"]["name"].value;
+      //   if(x==""){
+      //     alert("name is required");
+      //   }
+      // }
+      function validate(){
+        let x = document.forms["regform"]["name"].value;
+        if(x==""){
+          document.getElementById("nameveri").innerHTML="This is a required field";
+          document.getElementById("nameveri").style.display="block";
+          event.preventDefault();
+        }
+  
+       x = document.forms["regform"]["age"].value;
+        if(x==""){
+          document.getElementById("ageveri").innerHTML="This is a required field";
+          document.getElementById("ageveri").style.display="block";
+          event.preventDefault();
+        }
+        if(Number(x)<18){
+           document.getElementById("ageveri").innerHTML="age must be more than 18";
+          document.getElementById("ageveri").style.display="block";
+          event.preventDefault();
+        }
+
+        x = document.forms["regform"]["email"].value;
+        if(x==""){
+          document.getElementById("emailveri").innerHTML="email is required";
+          document.getElementById("emailveri").style.display="block";
+          event.preventDefault();
+        }
+
+        x=document.forms["regform"]["phone-home"].value;
+        let limit=/^[0-9]{10}$/;
+
+        // if (){
+        //    document.getElementById("homeveri").innerHTML="must be 10 digits";
+        //    document.getElementById("homeveri").style.display="block";
+        //   event.preventDefault();
+        // }
+        // if (x ==""){
+        //    document.getElementById("homeveri").innerHTML="required";
+        //    document.getElementById("homeveri").style.display="block";
+        //   event.preventDefault();
+        // }
+        x=document.forms["regform"]["pass"].value;
+        y=document.forms["regform"]["repass"].value;
+        if(x!=y){
+          {
+           document.getElementById("passveri").innerHTML="must match tha password";
+           document.getElementById("passveri").style.display="block";
+          event.preventDefault();
+        }
+        }
+        
+      }
+
+      
+
+      
+        
+      
+    </script>
+  </body>
+</html>

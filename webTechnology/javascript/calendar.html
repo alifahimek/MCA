@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Year Calendar</title>
+  <!-- <style>
+    table {
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    th, td {
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      border: 1px solid #333;
+    }
+    .month-title {
+      font-weight: bold;
+      font-size: 18px;
+      margin-top: 30px;
+    }
+  </style> -->
+</head>
+<body>
+  <h1>Year Calendar</h1>
+  <div id="calendar"></div>
+
+  <script>
+    const container = document.getElementById("calendar");
+    const year = prompt("Enter the year:");
+
+    const monthNames = [
+      "January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
+    ];
+
+    for (let month = 0; month < 12; month++) {
+      let date = new Date(year, month, 1);
+      let table = "<div class='month-title'>" + monthNames[month] + " " + year + "</div>";
+      table += "<table><tr><th>SUN</th><th>MON</th><th>TUE</th><th>WED</th><th>THU</th><th>FRI</th><th>SAT</th></tr><tr>";
+
+      
+      for (let i = 0; i < date.getDay(); i++) {
+        table += "<td></td>";
+      }
+
+      while (date.getMonth() === month) {
+        table += "<td>" + date.getDate() + "</td>";
+        if (date.getDay() === 6) {
+          table += "</tr><tr>"; 
+        }
+        date.setDate(date.getDate() + 1);
+      }
+
+      table += "</tr></table>";
+      container.innerHTML += table;
+    }
+  </script>
+</body>
+</html>

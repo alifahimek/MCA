@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header id="hero">
+      <div class="text-box">
+        <h1 class="heading-primary">
+          <span class="heading-primary-main">welcome</span>
+          <span class="heading-primary-sub">to the world of css</span>
+        </h1>
+        <a class="btn" href="#">Get started</a>
+      </div>
+    </header>
+    <main>
+      <section class="section__types" id="target">
+        <div class="container">
+          <span class="subheading">types of css</span>
+          <div class=" css css--inline">
+            <h2>inline css</h2>
+            <div class="grid">
+            <p class="text">
+              Inline CSS is a method of adding styles directly to an HTML
+              element using the style attribute. This allows you to change the
+              appearance of a single element quickly without needing an external
+              stylesheet. For example, you can set the color or font size of a
+              paragraph inline. Although inline CSS is easy to use for small
+              changes or quick tests, it is not efficient for larger projects.
+              It mixes style with content, making the code harder to read and
+              maintain. It also doesn’t allow reusing styles across multiple
+              elements. For these reasons, inline CSS is best used sparingly.
+            </p>
+            <p class="code" id="code">            &lt;!DOCTYPE html&gt;
+                &lt;html lang="en"&gt;
+                &lt;head&gt;
+                    &lt;meta charset="UTF-8" /&gt;
+                    &lt;title&gt;Inline CSS Example&lt;/title&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                    &lt;p style="color: green; font-weight: bold"&gt;
+                    This text is styled using inline CSS.
+                    &lt;/p&gt;
+                &lt;/body&gt;
+                &lt;/html&gt;
+            </p>
+            </div>
+          </div>
+          <div class=" css css--internal">
+            <h2>internal css</h2>
+             <div class="grid">
+            <p class="text">
+              Internal CSS refers to placing CSS styles inside an HTML document within the style tag, usually in the head section. This method allows you to apply styles to the entire page without linking to an external stylesheet. Internal CSS is useful when you want to style a single page uniquely or test styles quickly.
+
+While internal CSS keeps the styles within the HTML file, making it easier to manage small projects, it is less efficient for larger websites where many pages share the same styles. For bigger projects, external CSS files are recommended for better organization and reusability.
+            </p>
+            <p class="code" id="code">            &lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8" /&gt;
+  &lt;title&gt;Internal CSS Example&lt;/title&gt;
+  &lt;style&gt;
+    body {
+      background-color: #f0f8ff;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      color: navy;
+      text-align: center;
+    }
+    p {
+      color: #555;
+      font-size: 16px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+  &lt;p&gt;This paragraph is styled using internal CSS.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+            </p>
+            </div>
+          </div>
+          <div class=" css css--external">
+            <h2>external css</h2>
+             <div class="grid">
+            <p class="text">
+              External CSS involves writing all your CSS styles in a separate .css file, which you then link to your HTML document using the <link> tag. This approach is ideal for larger websites because it allows you to keep your styles organized and reuse them across multiple pages.
+
+Using external CSS improves maintainability, as any change in the CSS file instantly updates the look of all linked pages. It also keeps the HTML files clean and focused on content rather than styling. External CSS is widely used in professional web development for its scalability and separation of concerns.
+            </p>
+            <p class="code" id="code">            &lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8" /&gt;
+  &lt;title&gt;External CSS Example&lt;/title&gt;
+  &lt;link rel="stylesheet" href="styles.css" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+  &lt;p&gt;This paragraph is styled using external CSS.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+            </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+  <script>
+    window.addEventListener('scroll', () => {
+  const target = document.getElementById('target');
+  const fadeDiv = document.getElementById('code');
+
+  const targetPosition = target.getBoundingClientRect().top;
+  const windowHeight = window.innerHeight;
+
+  // When the top of the target section is visible within the viewport
+  if (targetPosition < windowHeight && targetPosition > 0) {
+    fadeDiv.classList.add('visible');
+  } else {
+    fadeDiv.classList.remove('visible');
+  }
+});
+
+  </script>
+</html>
