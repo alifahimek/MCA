@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <form name="regform" action="aim11.php" method="get" onsubmit="">
+      <table class="form-table" border="1" style="border-collapse:collapse; padding:8px;">
+        <tr>
+          <th colspan="2">registration form</th>
+        </tr>
+        <tr>
+          <td><label for="name">Name:</label></td>
+          <td><input type="text" id="name" name="name"  value="<?php echo htmlspecialchars($name); ?> "/> </td>
+        </tr>
+        <tr>
+            <td><label for="rollno">ROLL NO:</label> </p></td>
+            <td>
+              <input type="number" id="rollno"  alue="<?php echo htmlspecialchars($rollno); ?> ">
+
+</td>
+        </tr>
+        <tr>
+          <td><label for="mark1">mark 1:</label></td>
+          <td><input type="number" id="mr1" name="mark1" /></td>
+        </tr>
+        <tr>
+          <td><label for="mark2">mark2:</label></td>
+          <td>
+            <input type="number" id="mr2" name="mark2" />
+          </td>
+        </tr>
+        <tr>
+          <td><label for="mark3">mark3 :</label></td>
+          <td>
+            <input
+              type="number"
+              id="mr3"
+              name="mark3"
+              
+            />
+           
+          </td>
+        </tr>
+        
+       
+        <tr>
+          
+        
+
+        <tr>
+          <td> <button type="reset">Reset</button></td>
+          <td>
+           
+            <button type="submit" onclick="">Register</button>
+          </td>
+        </tr>
+      </table>
+    </form>
+</body>
+</html>
